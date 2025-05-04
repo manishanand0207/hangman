@@ -73,7 +73,7 @@ print(r'''
                    |___/     
 ''')
 
-print("Guess the names of Indian Cities and save the hangman!!")
+print("Guess the names of Indian Cities and save the hangman!")
 
 lives = len(stages) - 1
 choosen_word = random.choice(word_list)
@@ -102,14 +102,14 @@ while not game_over:
             found = True
 
     print("".join(placeholder))
-    print(f"lives left {lives}")
+    print(f"Lives left: {lives}")
 
     if guess not in choosen_word.lower():
         lives -= 1
         if lives < 0:
             game_over = True
             print("*=========================== You Lose ===========================*")
-            print("The word was:", choosen_word)
+            print(f"The word was: {choosen_word}")
 
     stage_index = lives if lives >= 0 else 0
     print(stages[stage_index])
