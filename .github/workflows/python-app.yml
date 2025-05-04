@@ -3,10 +3,10 @@ name: Python application
 on:
   push:
     branches:
-      - main  # Trigger the workflow when there's a push to the main branch
+      - master  # Trigger the workflow when there's a push to the main branch
   pull_request:
     branches:
-      - main  # Trigger the workflow when a pull request is opened/updated on the main branch
+      - master  # Trigger the workflow when a pull request is opened/updated on the main branch
 
 jobs:
   build:
