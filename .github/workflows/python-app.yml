@@ -1,0 +1,41 @@
+name: Python application
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow when there's a push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger the workflow when a pull request is opened/updated on the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Runs the workflow on the latest version of Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Checks out the repository so GitHub Actions can access it
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'  # Use Python 3.11, change as needed
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Install dependencies from requirements.txt
+
+      - name: Run linting with flake8
+        run: |
+          flake8 HangmanGame.py  # Lint your Python script to check for code style issues
+
+      - name: Run tests with pytest
+        run: |
+          pytest  # Run tests (if any are present in your project)
+
+      - name: Upload coverage to Codecov (optional)
+        if: success()  # This step is optional, only runs if the tests pass
+        run: |
+          pytest --cov=HangmanGame.py  # Uploads test coverage report
+          bash <(curl -s https://codecov.io/bash)  # Codecov integration (optional)
