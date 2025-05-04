@@ -108,7 +108,9 @@ while not game_over:
         lives -= 1
         if lives < 0:
             game_over = True
-            print("*=========================== You Lose ===========================*")
+            print(
+                "*==================== You Lose ====================*"
+            )
             print(f"The word was: {choosen_word}")
 
     stage_index = lives if lives >= 0 else 0
@@ -116,4 +118,6 @@ while not game_over:
 
     if "_" not in placeholder:
         game_over = True
-        print("*=========================== You Win ============================*")
+        print(
+            "*==================== You Win =====================*"
+        )
