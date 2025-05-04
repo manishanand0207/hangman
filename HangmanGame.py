@@ -82,7 +82,6 @@ word_length = len(choosen_word)
 # Uncomment to debug the chosen word
 # print(f"Chosen word: {choosen_word}")
 
-# Initialize placeholder
 placeholder = ["_"] * word_length
 print("".join(placeholder))
 
@@ -95,7 +94,6 @@ while not game_over:
 
     found = False
 
-    # Check if guessed letter is in the word
     for letter in range(word_length):
         if choosen_word[letter].lower() == guess:
             placeholder[letter] = choosen_word[letter]
@@ -108,9 +106,7 @@ while not game_over:
         lives -= 1
         if lives < 0:
             game_over = True
-            print(
-                "*==================== You Lose ====================*"
-            )
+            print("*==================== You Lose ====================*")
             print(f"The word was: {choosen_word}")
 
     stage_index = lives if lives >= 0 else 0
@@ -118,6 +114,4 @@ while not game_over:
 
     if "_" not in placeholder:
         game_over = True
-        print(
-            "*==================== You Win =====================*"
-        )
+        print("*==================== You Win =====================*")
