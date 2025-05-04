@@ -79,7 +79,7 @@ lives = len(stages) - 1
 choosen_word = random.choice(word_list)
 word_length = len(choosen_word)
 
-# Uncomment to debug the chosen word
+# Uncomment to debug
 # print(f"Chosen word: {choosen_word}")
 
 placeholder = ["_"] * word_length
