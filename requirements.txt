@@ -1,0 +1,9 @@
+# No external dependencies for the Hangman game, but if needed, you could add:
+
+# For testing
+pytest==7.0.0
+
+# For linting and code style checks
+flake8==4.0.0
+
+# If you want to use any other libraries (e.g., for logging, etc.), add them here
