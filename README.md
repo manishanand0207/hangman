@@ -1,6 +1,6 @@
 # Hangman Game - Indian Cities Edition 🇮🇳
 
-This is a Python implementation of the classic Hangman game, where the player must guess the names of Indian cities to save the hangman from being "hanged".
+This is a Python implementation of the classic Hangman game, where the player must guess the names of Indian cities to save the hangman from being "hanged"!!
 
 ---
 
